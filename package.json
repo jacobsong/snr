@@ -1,0 +1,22 @@
+{
+  "name": "snr-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for smashinrelaxin.com",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js",
+    "debug": "nodemon --inspect bot.js",
+    "api": "node server.js",
+    "api dev": "nodemon server.js",
+    "api debug": "nodemon --inspect server.js"
+  },
+  "author": "Jake",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "discord.js": "^11.5.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.12"
+  }
+}
