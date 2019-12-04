@@ -31,7 +31,7 @@ module.exports = {
           { discordId: staff.id },
           { $inc: { roleCd: 1 } }
       );
-    } catch {
+    } catch (e) {
       msg.reply("Database error");
       return;
     }

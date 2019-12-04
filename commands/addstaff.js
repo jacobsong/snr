@@ -40,7 +40,7 @@ module.exports = {
         roleCd: userRoleCd
       }).save();
 
-    } catch {
+    } catch (e) {
       msg.reply("Database error");
       return;
     }

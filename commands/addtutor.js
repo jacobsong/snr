@@ -23,7 +23,7 @@ module.exports = {
       }
 
       await Tutors.updateOne({ charName: character[0] }, { $push: { tutors: tutor } }, { upsert: true });
-    } catch {
+    } catch (e) {
       msg.reply("Database error");
       return;
     }

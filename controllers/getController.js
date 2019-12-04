@@ -9,13 +9,11 @@ const getStaff = async (roleCd) => {
     }
 
     const staff = await Staff.find({ roleCd: roleCd }).select("-_id discordName discordAvatar roleCd").lean();
-    
     if (staff) {
       return staff;
     }
-    
     return { error: "Profile not found" };
-  } catch {
+  } catch (e) {
     return { error: "Database find failed" };
   }
 }
@@ -28,7 +26,7 @@ const getTutors = async () => {
       return tutors;
     }
     return { error: "Profile not found" };
-  } catch {
+  } catch (e) {
     return { error: "Database find failed" };
   }
 }

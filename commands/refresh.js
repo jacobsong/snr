@@ -22,7 +22,7 @@ module.exports = {
         msg.reply("you are not added on the website");
         return;
       }
-    } catch {
+    } catch (e) {
       msg.reply("Database error");
       return;
     }

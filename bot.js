@@ -55,6 +55,6 @@ client.on("message", async message => {
 // Login with bot token
 try {
   client.login(config.token);
-} catch {
+} catch (e) {
   console.log("Failed to login to Discord");
 }
