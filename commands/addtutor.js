@@ -5,7 +5,7 @@ module.exports = {
   name: "addtutor",
   description: "Adds a tutor to the SnR website, use `characters` command to list valid names",
   guildOnly: true,
-  roleRequired: 2, // 0=None, 1=Mod, 2=Admin, 3=Co-Owner, 4=Owner
+  roleRequired: 1, // 0=None, 1=Mod, 2=Admin, 3=Co-Owner, 4=Owner
   charRequired: true,
   argsRequired: 2,
   mentionsRequired: 1,
