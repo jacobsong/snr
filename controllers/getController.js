@@ -21,7 +21,7 @@ const getStaff = async (roleCd) => {
 
 const getTutors = async () => {
   try {
-    const tutors = await Tutor.find().select("-_id charName tutors").lean();
+    const tutors = await Tutor.find().sort({ charId: 1 }).select("-_id charName tutors").lean();
     if (tutors) {
       return tutors;
     }

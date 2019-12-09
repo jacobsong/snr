@@ -3,8 +3,9 @@ const { Schema } = mongoose;
 
 const tutorSchema = new Schema(
   {
+    charId: Number,
     charName: { type: String, unique: true, sparse: true },
-    tutors: [ String ]
+    tutors: [ { discordId: String, discordName: String } ]
   }
 );
 

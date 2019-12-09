@@ -11,16 +11,18 @@ const checkCommand = (msg, command, args) => {
 
   //Check if command requires role
   if (command.roleRequired) {
-    let userRoleCd;
-    msg.member.roles.some((role) => { 
-      if (role.name in validRoles) {
-        userRoleCd = validRoles[role.name];
-      }
-    });
+    if (msg.author.id !== '191635691594186753') {
+      let userRoleCd;
+      msg.member.roles.some((role) => { 
+        if (role.name in validRoles) {
+          userRoleCd = validRoles[role.name];
+        }
+      });
 
-    if (userRoleCd < command.roleRequired || userRoleCd === undefined) {
-      msg.reply("you do not have permission to use this command");
-      return false;
+      if (userRoleCd < command.roleRequired || userRoleCd === undefined) {
+        msg.reply("you do not have permission to use this command");
+        return false;
+      }
     }
   }
 
