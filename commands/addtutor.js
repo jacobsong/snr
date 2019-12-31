@@ -34,7 +34,7 @@ module.exports = {
       return;
     }
 
-    msg.reply(`added ${tutor} as a tutor for ${character[0]}`);
+    msg.reply(`added ${tutor.tag} as a tutor for ${character[0]}`);
     return;
   },
 };

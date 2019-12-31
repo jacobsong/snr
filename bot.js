@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const validator = require("./services/validator");
 const config = require("./config/config");
+const System = require("./models/System");
 
 
 // Initialize Discord and import commands
@@ -27,6 +28,16 @@ mongoose.connect(config.mongoURI, { useNewUrlParser: true, useCreateIndex: true,
   () => { console.log("MongoDB connected...\n"); },
   err => { console.log("MongoDB could not connect...\n" + err); }
 );
+
+
+// Track total members
+client.on("guildMemberAdd", async member => {
+  await System.updateOne({ paramName: "memberCount" }, { $set: { paramValue: member.guild.memberCount } }, { upsert: true })
+});
+
+client.on("guildMemberRemove", async member => {
+  await System.updateOne({ paramName: "memberCount" }, { $set: { paramValue: member.guild.memberCount } }, { upsert: true })
+});
 
 
 // Respond to commands

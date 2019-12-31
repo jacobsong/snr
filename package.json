@@ -8,8 +8,8 @@
     "dev": "nodemon bot.js",
     "debug": "nodemon --inspect bot.js",
     "api": "node server.js",
-    "api dev": "nodemon server.js",
-    "api debug": "nodemon --inspect server.js"
+    "api-dev": "nodemon server.js",
+    "api-debug": "nodemon --inspect server.js"
   },
   "author": "Jake",
   "license": "ISC",

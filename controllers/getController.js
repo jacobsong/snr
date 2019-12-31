@@ -1,5 +1,6 @@
 const Tutor = require("../models/Tutors");
 const Staff = require("../models/Staff");
+const System = require("../models/System");
 
 
 const getStaff = async (roleCd) => {
@@ -32,7 +33,21 @@ const getTutors = async () => {
 }
 
 
+const getMemberCount = async () => {
+  try {
+    const count = await System.findOne({ paramName: "memberCount" }).lean();
+    if (count) {
+      return count.paramValue;
+    }
+    return 6200;
+  } catch (e) {
+    return { error: "Database find failed" };
+  }
+}
+
+
 module.exports = {
   getStaff,
-  getTutors
+  getTutors,
+  getMemberCount
 }
